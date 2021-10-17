@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Web</title>
+</head>
+<body style="align-items: center; 
+             justify-content: center;
+             margin: 0;
+             padding: 0;
+             display:flex;
+             width:100vw;
+             height:100vh ">
+             
+    <video id="video" autoplay></video>
+
+    <script >
+        function startVideoFromWebCam(){
+
+        const specs = {
+            video: {
+                width: 900,
+                height: 400,  
+                //aspectRatio: 21/9
+            }
+        }
+
+        navigator.mediaDevices.getUserMedia(specs).then(stream => {
+
+            const videoElement = document.querySelector('#video')
+            videoElement.srcObject = stream
+            alert('Renderizar imagem da webcam')
+            
+
+        }).catch(error => {
+            console.log('error')
+        })
+        }
+
+        window.addEventListener("DOMContentLoaded",startVideoFromWebCam);
+    </script>
+    
+    
+</body>
+</html>
