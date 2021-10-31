@@ -9,4 +9,6 @@ app.get('/', (req, res) => {
         console.log("Running root page");
     }
 });
-app.listen(port)
+app.listen(port,() =>{
+    console.info("Running application on http://localhost:8080")
+})
