@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const path = __dirname + '/views/'
+const path = __dirname
 const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     
-    if (res.sendFile(path + 'cameraSala.html')) {
+    if (res.sendFile(path + '/cameraSala.html')) {
         console.log("Running root page");
     }
 });
