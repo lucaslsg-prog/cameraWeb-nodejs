@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     
-    if (res.sendFile(path + 'index.html')) {
+    if (res.sendFile(path + 'cameraSala.html')) {
         console.log("Running root page");
     }
 });
